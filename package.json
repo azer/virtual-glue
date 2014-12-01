@@ -1,6 +1,6 @@
 {
   "name": "virtual-glue",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Render HTML with Hyperglue and VirtualDOM",
   "main": "index.js",
   "scripts": {
