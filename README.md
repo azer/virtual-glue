@@ -1,6 +1,6 @@
 ## virtual-glue
 
-[Hyperglue](http://github.com/substack/hyperglue) and [VirtualDOM](http://npmjs.org/virtual-dom)
+Render HTML with [Hyperglue](http://github.com/substack/hyperglue) and [VirtualDOM](http://npmjs.org/virtual-dom)
 
 ## Install
 
