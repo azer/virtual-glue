@@ -9,7 +9,7 @@ test('simple clock', function (t) {
 
   var patch = glue(document.body, '<h1 class="now"></h1>', function () {
     return {
-      '.now:first': time('{hours}:{minutes}:{seconds}')
+      '.now': time('{hours}:{minutes}:{seconds}')
     };
   });
 

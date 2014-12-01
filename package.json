@@ -1,7 +1,7 @@
 {
   "name": "virtual-glue",
   "version": "0.0.0",
-  "description": "Hyperglue and VirtualDOM",
+  "description": "Render HTML with Hyperglue and VirtualDOM",
   "main": "index.js",
   "scripts": {
     "test": "node test.js -b -l phantom -q"
