@@ -25,7 +25,7 @@ var patch = glue(document.body, '<h1 class="clock"></h1>', function () {
 setInterval(patch, 1000)
 ```
 
-On server-side:
+On server-side (a.k.a one-time render)
 
 ```js
 var glue = require('virtual-glue')
