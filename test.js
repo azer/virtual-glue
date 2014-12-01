@@ -4,7 +4,15 @@ var test = require("prova");
 
 document.body.innerHTML = '';
 
-test('simple clock', function (t) {
+test('one time render for server-side', function (t) {
+  t.plan(1);
+
+  assert(t, glue('<h1 class="now"></h1>', {
+    '.now': time('{hours}:{minutes}:{seconds}')
+  }));
+});
+
+test('patching with virtual-dom for browsers', function (t) {
   t.plan(2);
 
   var patch = glue(document.body, '<h1 class="now"></h1>', function () {
@@ -13,15 +21,14 @@ test('simple clock', function (t) {
     };
   });
 
-  assert();
+  assert(t, document.body.innerHTML);
 
   setTimeout(function () {
     patch();
-    assert();
+    assert(t, document.body.innerHTML);
   }, 1000);
-
-  function assert () {
-    t.equal(document.body.innerHTML.trim(), '<h1 class="now">' + time('{hours}:{minutes}:{seconds}') + '</h1>');
-  }
-
 });
+
+function assert (t, expected) {
+  t.equal(expected.trim(), '<h1 class="now">' + time('{hours}:{minutes}:{seconds}') + '</h1>');
+}

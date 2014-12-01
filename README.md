@@ -16,11 +16,25 @@ A simple clock app:
 var glue = require('virtual-glue')
 var time = require('format-date')
 
-var patch = glue(document.body, '<h1 class="now"></h1>', function () {
+var patch = glue(document.body, '<h1 class="clock"></h1>', function () {
   return {
       '.now': time('{hours}:{minutes}:{seconds}')
   }
 })
 
 setInterval(patch, 1000)
+```
+
+On server-side:
+
+```js
+var glue = require('virtual-glue')
+var time = require('format-date')
+
+var html = glue('<h1 class="now"></h1>', {
+  '.now': time('{hours}:{minutes}:{seconds}')
+})
+
+html
+// => <h1 class="clock">15:03:17</h1>
 ```
