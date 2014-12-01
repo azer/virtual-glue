@@ -4,7 +4,7 @@ var hyperglue = require("hyperglue");
 module.exports = virtualGlue;
 
 function virtualGlue (parent, template, updates) {
-  if (arguments.length == 2) return hyperglue(parent, template).outerHTML;
+  if (arguments.length == 2) return serverside(parent, template);
 
   var patch;
   var queued;
@@ -26,4 +26,12 @@ function virtualGlue (parent, template, updates) {
 
     return patch(hyperglue(template, updates()).outerHTML);
   };
+}
+
+function serverside (template, updates) {
+  if (typeof updates == 'function') {
+    updates = updates();
+  }
+
+  return hyperglue(template, updates).outerHTML;
 }

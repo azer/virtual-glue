@@ -5,10 +5,16 @@ var test = require("prova");
 document.body.innerHTML = '';
 
 test('one time render for server-side', function (t) {
-  t.plan(1);
+  t.plan(2);
 
   assert(t, glue('<h1 class="now"></h1>', {
     '.now': time('{hours}:{minutes}:{seconds}')
+  }));
+
+  assert(t, glue('<h1 class="now"></h1>', function () {
+    return {
+      '.now': time('{hours}:{minutes}:{seconds}')
+    };
   }));
 });
 
