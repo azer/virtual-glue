@@ -1,0 +1,28 @@
+{
+  "name": "virtual-glue",
+  "version": "0.0.0",
+  "description": "Hyperglue and VirtualDOM",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js -b -l phantom -q"
+  },
+  "keywords": [
+    "hyperglue",
+    "virtual",
+    "dom"
+  ],
+  "repository": {
+    "url": "git@github.com:azer/virtual-glue.git",
+    "type": "git"
+  },
+  "author": "azer",
+  "license": "BSD",
+  "dependencies": {
+    "html-patcher": "0.0.3",
+    "hyperglue": "azer/hyperglue"
+  },
+  "devDependencies": {
+    "format-date": "0.0.x",
+    "prova": "^2.1.1"
+  }
+}
